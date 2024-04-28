@@ -1,0 +1,19 @@
+﻿<Window x:Class="FHTW.Swen2.Greeter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FHTW.Swen2.Greeter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="577">
+    <Window.DataContext>
+        <local:GreetingViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Label Content="Who to greet:" HorizontalAlignment="Left" Height="26" Margin="23,30,0,0" VerticalAlignment="Top" Width="85"/>
+        <TextBox HorizontalAlignment="Left" Margin="124,36,0,0" TextWrapping="Wrap" Text="{Binding Target, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Greet now!" Command="{Binding GreetingAction}" HorizontalAlignment="Left" Margin="295,36,0,0" VerticalAlignment="Top" Width="108"/>
+        <Label Content="{Binding Text}" HorizontalAlignment="Left" Height="54" Margin="74,128,0,0" VerticalAlignment="Top" Width="387" FontSize="24"/>
+
+    </Grid>
+</Window>
